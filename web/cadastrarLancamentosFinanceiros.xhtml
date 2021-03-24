@@ -4,7 +4,8 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
@@ -13,7 +14,13 @@
             <ui:define name="content">
                 <h1>Cadastrar Lançanmento</h1>
 
-                <h:form>
+                <h:form> 
+                    <div class="p-col-12 p-md-6 p-lg-4 p-xl-3">
+                        <p:selectOneRadio id="tipo"  >
+                            <f:selectItem itemLabel="Crédito" itemValue="C"/>
+                            <f:selectItem itemLabel="Débito" itemValue="D"/>
+                        </p:selectOneRadio>
+                    </div>
                     <h:panelGrid columns="2">
                         <p:outputLabel value="Nome / Descrição"/>
                         <p:inputText />
@@ -21,7 +28,27 @@
                         <p:inputText />
                         <p:outputLabel value="Tipo"/>
                         <p:inputText />
-                        <p:commandButton value="Entrar"/>
+
+                        <p:outputLabel value="Categoria"/>
+                        <p:selectOneListbox id="categoria">
+                            <f:selectItem itemLabel="Moradia" itemValue="Moradia"/>
+                            <f:selectItem itemLabel="Alimentação" itemValue="Alimentação"/>
+                            <f:selectItem itemLabel="Saúde" itemValue="Saúde"/>
+                            <f:selectItem itemLabel="Educação" itemValue="Educação"/>
+                            <f:selectItem itemLabel="Despesas Pessoais
+                                          " itemValue="Despesas Pessoais
+                                          "/>
+                            <f:selectItem itemLabel="Transporte" itemValue="Transporte"/>
+                            <f:selectItem itemLabel="Celular/TV/Internet
+                                          " itemValue="Celular/TV/Internet
+                                          "/>
+                            <f:selectItem itemLabel="Lazer" itemValue="Lazer"/>
+
+                        </p:selectOneListbox>
+
+                        <p:outputLabel value="Data de Vencimento"/>
+                        <h:inputText a:type="date" />
+                        <p:commandButton value="Cadastrar"/>
                     </h:panelGrid>
                 </h:form>
             </ui:define>

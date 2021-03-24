@@ -17,12 +17,16 @@
                     <h:panelGrid columns="1">
                         <p:outputLabel value="Nome Completo"/>
                         <p:inputText />
+                        
                         <p:outputLabel value="E-mail"/>
                         <p:inputText />
+                        
                         <p:outputLabel value="Data de Nascimento"/>
                         <h:inputText a:type="date" />
+                        
                         <p:outputLabel value="Senha"/>
-                        <p:inputText />
+                        <p:password id="password" value="Senha" feedback="true"/>
+                        
                         <p:commandButton value="Entrar"/>
                     </h:panelGrid>
                 </h:form>
